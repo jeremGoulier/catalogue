@@ -240,7 +240,7 @@ pipeline {
                               'ErrorRate'
                       ]
           }
-
+           error('Performance issue')
       }
     }
     stage('Mark artifact for staging namespace') {
