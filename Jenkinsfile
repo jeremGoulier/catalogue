@@ -268,7 +268,7 @@ pipeline {
         always {
                 sh 'docker-compose -f $WORKSPACE/infrastructure/infrastructure/neoload/lg/docker-compose.yml down'
                 sh 'docker-compose -f $WORKSPACE/docker-compose.yml down'
-                sh "docker network delete ${APP_NAME}_${VERSION} || true"
+                sh "docker network rm ${APP_NAME}_${VERSION} || true"
 
                 cleanWs()
                 sh 'docker volume prune'
