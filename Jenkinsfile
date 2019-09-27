@@ -166,7 +166,7 @@ pipeline {
     stage('Sanity Check') {
         agent {
             dockerfile {
-                args '--user root -v /tmp:/tmp --network=catalogue_master_default'
+                args '--user root -v /tmp:/tmp --network=${APP_NAME}_${VERSION}'
                 dir 'infrastructure/infrastructure/neoload/controller/'
             }
         }
@@ -217,7 +217,7 @@ pipeline {
     stage('Run functional check in dev') {
         agent {
             dockerfile {
-                args '--user root -v /tmp:/tmp --network=catalogue_master_default'
+                args '--user root -v /tmp:/tmp --network=${APP_NAME}_${VERSION}'
                 dir 'infrastructure/infrastructure/neoload/controller/'
             }
         }
