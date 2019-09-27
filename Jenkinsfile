@@ -33,7 +33,7 @@ pipeline {
                       branch :'master'
           }
       }
-      stage('create parasoft netwrok') {
+      stage('create docker netwrok') {
 
                    steps {
                         sh "docker network create ${APP_NAME}_${VERSION} || true"
